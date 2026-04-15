@@ -34,13 +34,9 @@ This project demonstrates a basic full-stack backend application where notes are
 
 ## 🎥 Demo
 
-(Add your video/demo link here)
+https://youtu.be/080RSJxjQmo
 
 ---
-
-## 🌐 Live Project
-
-(Add your deployment link here)
 
 ---
 
