@@ -1,0 +1,32 @@
+<div class="max-w-3xl mx-auto px-6 py-12">
+    <header class="mb-10">
+        <h1 class="text-slate-900 text-3xl font-bold tracking-tight">Edit Note</h1>
+        <p class="text-slate-500 text-sm mt-2">Adjust your thoughts and save them to the vault.</p>
+    </header>
+
+    <form action="/edit-note/<%= note._id %>" method="POST" class="space-y-8">
+        
+        <div class="group">
+            <label class="block text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-3 group-focus-within:text-emerald-500 transition-colors">Title</label>
+            <input type="text" name="title" value="<%= note.title %>" required
+                   class="w-full bg-[#1e1e1e] border border-slate-800 rounded-xl p-4 text-white text-lg font-medium focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all">
+        </div>
+
+        <div class="group">
+            <label class="block text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-3 group-focus-within:text-emerald-500 transition-colors">Note Content</label>
+            <textarea name="body" rows="12" required
+                      class="w-full bg-[#1e1e1e] border border-slate-800 rounded-xl p-4 text-slate-300 leading-relaxed focus:outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all"><%= note.body %></textarea>
+        </div>
+
+        <div class="flex items-center gap-6 pt-4">
+            <button type="submit" 
+                    class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-emerald-900/20 transition-all transform hover:-translate-y-0.5">
+                Save Changes
+            </button>
+            
+            <a href="/note/<%= note._id %>" class="text-slate-500 hover:text-white text-sm font-semibold transition-colors">
+                Cancel
+            </a>
+        </div>
+    </form>
+</div>

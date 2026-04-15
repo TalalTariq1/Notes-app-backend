@@ -1,0 +1,31 @@
+<div class="notes-page">
+  
+    <div class="notes-header">
+        <h1>My Notes</h1>
+        <h2>You have <%= notes.length %> notes</h2>
+    </div>
+
+    <div class="notes-grid">
+        <% notes.forEach(note => { %>
+            <div class="note-card">
+
+                <div class="note-content">
+                    <h2><%= note.title %></h2>
+                    <p><%= note.body %></p>
+                </div>
+
+                <div class="note-footer">
+                    <span><%= note.createdAt.toDateString() %> </span>
+                    <a href="/note/<%=note._id %>" class="expand-link">Expand →</a>
+                </div>
+
+            
+
+            </div>
+
+            
+      <%}); %>
+
+    </div>
+
+</div>

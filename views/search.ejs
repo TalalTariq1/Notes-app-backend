@@ -1,0 +1,36 @@
+<div class="max-w-2xl mx-auto px-4 py-12">
+
+    <h1 class="text-3xl font-black text-slate-900 mb-8 text-center">Search the Vault</h1>
+
+    <form action="/search" method="POST" autocomplete="off" class="flex flex-col sm:flex-row gap-3 mb-12">
+        <input 
+            type="text" 
+            name="searchTerm" 
+            placeholder="Search titles or content..." 
+            required
+            class="flex-1 bg-slate-50 border-2 border-slate-200 rounded-lg p-3 text-slate-900 focus:outline-none focus:border-blue-600 transition-all shadow-sm"
+        >
+        <button type="submit" class="bg-slate-900 text-white px-8 py-3 rounded-lg font-black uppercase tracking-widest hover:bg-blue-600 transition-all">
+            Find
+        </button>
+    </form>
+
+    <%if ( data && data.length>0) { %>
+        <% data.forEach(note => {   %>
+            <div class="p-5 mb-5 border border-slate-200 rounded-lg bg-white shadow-sm hover:border-blue-500 transition-all">
+            <h3 class="font-bold text-slate-900 text-lg"><%= note.title %></h3>
+            <p class="text-slate-600 text-sm line-clamp-2 mt-1"><%= note.body %></p>
+            <a href="/note/<%=note._id %>" class="text-blue-600 text-xs font-bold uppercase mt-3 inline-block">Open Entry</a>
+        </div>  
+       <% }); %>
+
+        <% } else if(data && data.length==0) { %>
+            <div class="text-center py-20 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200">
+            <p class="text-slate-500 font-medium">No matches found in the vault.</p>
+        </div>
+
+            <% } %>
+
+
+
+</div>
